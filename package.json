@@ -1,5 +1,16 @@
 {
+  "name": "twitter-oauth",
+  "version": "1.0.0",
+  "description": "SocialTrends",
+  "main": "app.js",
+  "author": "Vahid Mazdeh",
+  "license": "ISC",
   "dependencies": {
-  },
-  "repository": "none"
+    "express": "^4.11.2",
+    "oauth-1.0a": "*",
+    "querystring": "*",
+    "cors": "*",
+    "request": "*",
+    "twitter": "*"
+  }
 }

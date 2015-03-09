@@ -1,11 +1,13 @@
-$( "#repos" ).on( "click", function( event ) {
-    repoList()
+trendList()
+
+$( "#repos" ).on( "load", function( event ) {
+    trendList()
 })
 
 $( "#myrepos" ).on( "click", function( event ) {
-    myRepos()
+    googleList()
 })
 
-$( "#myevents" ).on( "click", function( event ) {
-    myEvents()
-})
+// $( "#myevents" ).on( "click", function( event ) {
+//     myEvents()
+// })
