@@ -1,5 +1,4 @@
 trendList()
-
 $( "#repos" ).on( "load", function( event ) {
     trendList()
 })
