@@ -4,19 +4,18 @@ function googleList(){
     
     $.get("https://socialtrends.herokuapp.com/trends/available.json", function(data) {
 
-        var repos = data
-        console.log(repos)
+        var countries = data
 
         $.get("/git-jquery/templates/countryList.jade", function(template) {
 
             // render the template
-            var html = jade.render(template, {items: repos})         
+            var html = jade.render(template, {items: countries})         
 
             // assign the rendered html to the dom element whose id is #list
             $("#list").html(html)
 
             // load the first repo to view
-            googleView(repos.woeid)
+            googleView(countries[0])
 
         })
 
