@@ -1,100 +1,24 @@
 br
 br
-div#example-grid(style="background-color:#D8D9D0")
-			div.nine.columns(style='text-align: center')
-				div.row
-					div.twelve.columns(style="background-color:#33403B; font-size:1.5em; font-weight:bold; color:#fff")
-						=item.name
+each i in item
+	div#example-grid(style="background-color:#D8D9D0")
+		div.nine.columns(style='text-align: center')
+			div.row
+				b= i.name
+			div.row
+				div.three.columns 
+					b User:
+				div.eight.columns
+					=i.user.name
 
-				div.row
-					div.three.columns 
-						b Owner:
-					div.seven.columns
-						a(href=item.owner.html_url)
-							=item.owner.login
-					div.two.columns
-						img(src=item.owner.avatar_url)
+			div.row
+				div.three.columns 
+					b Tweet:
+				div.eight.columns
+					=i.text
 
-				div.row
-					div.three.columns 
-						b Type:
-					div.seven.columns
-						=item.owner.type
-				
-				if (item.description)
-					div.row
-						div.twelve.columns(style="background-color:#33403B")
-							b(style="color:#fff") Description:
-						div.twelve.columns
-							=item.description
-				div.row
-					div.twelve.columns(style="background-color:#33403B")
-						b(style="color:#fff") Repository:
-					div.twelve.columns
-						a(href=item.html_url)
-							=item.html_url
-
-				div.row
-					div.twelve.columns(style="background-color:#33403B")
-						b(style="color:#fff") Clone:
-					div.twelve.columns
-						a(href=item.html_url)
-							=item.clone_url
-
-				div.row
-					div.five.columns
-						b Created:
-					div.seven.columns
-						=item.created_at
-
-				div.row
-					div.five.columns
-						b Last Updated:
-					div.seven.columns
-						=item.updated_at
-
-				div.row
-					div.six.columns
-						b Default Branch:
-					div.six.columns
-						=item.default_branch
-
-				div.row
-					div.six.columns
-						b Public:
-					div.six.columns
-						if (item.public)
-							b(style="color:green")| Yes
-						else
-							b(style="color:red")| No
-				div.row
-					div.six.columns
-						b Forks:
-					div.six.columns
-						=item.forks_count
-				div.row
-					div.six.columns
-						b Watchers:
-					div.six.columns
-						=item.watchers
-				div.row
-					div.six.columns
-						b Open Issues:
-					div.six.columns
-						=item.open_issues
-
-				div.row
-					div.six.columns
-						b Wiki:
-					div.six.columns
-						if (item.has_wiki)
-							b(style="color:green")| Yes
-						else
-							b(style="color:red")| No
-
-				if (item.language)
-					div.row
-						div.six.columns
-							b Language:
-						div.six.columns
-							=item.language
+			div.row
+				div.three.columns 
+					b Tweeted at:
+				div.eight.columns
+					=i.created_at

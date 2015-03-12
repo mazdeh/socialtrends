@@ -27,7 +27,7 @@ function repoView(phrase){
         //     })
         // }
 
-        $.get("/git-jquery/templates/repoView.jade", function(template) {
+        $.get("/socialtrends/templates/repoView.jade", function(template) {
 
             var html = jade.render(template, {item: repo})
             

@@ -7,7 +7,7 @@ function trendList(){
 
         var repos = data[0].trends
 
-        $.get("/git-jquery/templates/repoList.jade", function(template) {
+        $.get("/socialtrends/templates/repoList.jade", function(template) {
 
             // render the template
             var html = jade.render(template, {items: repos})         
